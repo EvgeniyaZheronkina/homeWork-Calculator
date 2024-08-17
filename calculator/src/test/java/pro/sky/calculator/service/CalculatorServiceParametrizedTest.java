@@ -31,5 +31,27 @@ public class CalculatorServiceParametrizedTest {
         Assertions.assertEquals(actual, expected);
     }
 
+    @ParameterizedTest
+    @MethodSource("data")
+    void minus(int a, int b) {
+        int actual = calculatorService.minus(a, b);
+        int expected = a - b;
+        Assertions.assertEquals(actual, expected);
+    }
+    @ParameterizedTest
+    @MethodSource("data")
+    void multiply(int a, int b) {
+        int actual = calculatorService.multiply(a, b);
+        int expected = a * b;
+        Assertions.assertEquals(actual, expected);
+    }
+
+    @ParameterizedTest
+    @MethodSource("data")
+    void divide(int a, int b) throws Exception {
+        int actual = calculatorService.divide(a, b);
+        int expected = a / b;
+        Assertions.assertEquals(actual, expected);
+    }
 
 }
